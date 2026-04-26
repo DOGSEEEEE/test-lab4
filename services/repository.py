@@ -1,9 +1,7 @@
-
-from .config import SHIPPING_TABLE_NAME
-from .db import get_dynamodb_resource
-
 from uuid import uuid4
 from datetime import datetime, timezone
+from .config import SHIPPING_TABLE_NAME
+from .db import get_dynamodb_resource
 
 
 class ShippingRepository:

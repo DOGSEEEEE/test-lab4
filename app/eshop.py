@@ -3,10 +3,14 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from services import ShippingService
 
-# --- БАЗОВІ КЛАСИ З ПОПЕРЕДНІХ ЛАБ (Мають бути тут!) ---
+"""
+Цей модуль містить логіку електронного магазину.
+"""
 
 class Product:
+    """Клас, що представляє товар."""
     def __init__(self, name, price, available_amount):
+        """Ініціалізація товару."""
         self.name = name
         self.price = price
         self.available_amount = available_amount
