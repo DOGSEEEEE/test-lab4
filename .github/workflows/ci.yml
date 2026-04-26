@@ -54,3 +54,8 @@ jobs:
       - name: Teardown
         if: always()
         run: docker-compose down
+      - name: Run Playwright Tests
+        run: |
+          playwright install-deps
+          playwright install chromium
+          pytest tests/test_ui_saucedemo.py
