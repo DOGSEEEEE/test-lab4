@@ -46,6 +46,10 @@ jobs:
           pytest tests/test_integration.py -v
           coverage run -m pytest tests/test_integration.py
           coverage report -m
+      - name: Run Bandit (Security Scan)
+        run: |
+          pip install bandit
+          bandit -r app services
 
       - name: Teardown
         if: always()
