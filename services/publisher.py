@@ -9,8 +9,8 @@ class ShippingPublisher:
             "sqs",
             endpoint_url=AWS_ENDPOINT_URL,
             region_name=AWS_REGION,
-            aws_access_key_id="test",
-            aws_secret_access_key="test",
+            aws_access_key_id="test", # nosec
+            aws_secret_access_key="test", # nosec 
             config=Config(parameter_validation=False)
         )
         # Створюємо чергу, якщо її немає
