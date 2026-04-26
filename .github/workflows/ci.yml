@@ -51,11 +51,11 @@ jobs:
           pip install bandit
           bandit -r app services
 
-      - name: Teardown
-        if: always()
-        run: docker-compose down
-      - name: Run Playwright Tests
+      - name: Install Playwright Browsers
         run: |
-          playwright install-deps
-          playwright install chromium
+          # Викликаємо через python -m, щоб система точно знайшла пакет
+          python -m playwright install --with-deps chromium
+
+      - name: Run UI Tests
+        run: |
           pytest tests/test_ui_saucedemo.py
